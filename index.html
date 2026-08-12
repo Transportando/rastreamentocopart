@@ -1,150 +1,156 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rastreamento Nacional GO</title>
+<title>Central de Liberação de Frota</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+• {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
 }
 
-body{
-background:#f3f5f8;
-padding:30px;
+body {
+background: #f4f6fa;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
 }
 
-.container{
-max-width:750px;
-margin:auto;
-background:#fff;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.12);
-overflow:hidden;
+.card {
+width: 100%;
+max-width: 650px;
+background: #fff;
+border-radius: 20px;
+padding: 40px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+text-align: center;
 }
 
-.topo{
-background:#0d4c8b;
-color:#fff;
-padding:25px;
-text-align:center;
+.logo {
+font-size: 28px;
+font-weight: bold;
+color: #0057b8;
+margin-bottom: 8px;
 }
 
-.topo h1{
-font-size:28px;
+.subtitulo {
+color: #666;
+margin-bottom: 30px;
 }
 
-.codigo{
-margin-top:8px;
-opacity:.9;
+.loader {
+width: 90px;
+height: 90px;
+border: 8px solid #e0e0e0;
+border-top: 8px solid #0057b8;
+border-radius: 50%;
+margin: 0 auto 25px;
+animation: girar 1s linear infinite;
 }
 
-.status{
-padding:25px;
-text-align:center;
+@keyframes girar {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
 }
 
-.status h2{
-color:#0d4c8b;
-margin-bottom:10px;
+.status {
+font-size: 36px;
+font-weight: bold;
+color: #1f2937;
+margin-bottom: 15px;
 }
 
-.barra{
-height:14px;
-background:#ddd;
-border-radius:20px;
-overflow:hidden;
-margin:20px 0;
+.mensagem {
+color: #6b7280;
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 30px;
 }
 
-.progresso{
-width:100%;
-height:100%;
-background:#2e7d32;
+.barra {
+width: 100%;
+height: 14px;
+background: #e5e7eb;
+border-radius: 20px;
+overflow: hidden;
 }
 
-.rota{
-display:flex;
-justify-content:space-between;
-padding:0 25px 25px;
-font-weight:bold;
-color:#444;
+.progresso {
+width: 78%;
+height: 100%;
+background: #0057b8;
+border-radius: 20px;
 }
 
-.timeline{
-padding:0 25px 30px;
+.info {
+margin-top: 25px;
+color: #555;
+line-height: 1.8;
 }
 
-.item{
-display:flex;
-margin-bottom:18px;
-}
-.barra{
-    width:100%;
-    height:12px;
-    background:#ddd;
-    border-radius:10px;
-    overflow:hidden;
+@media (max-width: 600px) {
+.card {
+padding: 30px 20px;
 }
 
-.progresso{
-    width:55%;
-    height:100%;
-    background:#2e7d32;
-    border-radius:10px;
-}
-.texto{
-color:#555;
+.status {
+font-size: 28px;
 }
 
-.data{
-font-size:13px;
-color:#888;
-margin-bottom:3px;
+.mensagem {
+font-size: 16px;
 }
 
-.rodape{
-background:#f5f5f5;
-padding:15px;
-text-align:center;
-font-size:13px;
-color:#777;
+.logo {
+font-size: 24px;
+}
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
+<main class="card">
 
-<div class="topo">
-<h1>RASTREAMENTO NACIONAL GO</h1>
-<div class="codigo">Código: NGO-587943621</div>
+<div class="logo">RASTREAMENTO COPART</div>
+
+<div class="subtitulo">
+Central de Monitoramento Logístico
 </div>
 
-<div class="status">
-<h2>EM TRÂNSITO</h2>
+<div class="loader" aria-label="Processando"></div>
 
-<div class="barra">
+<div class="status">
+AGUARDANDO LIBERAÇÃO
+</div>
+
+<div class="mensagem">
+Seu veículo encontra-se em processo administrativo de liberação para despacho.
+</div>
+
+<div class="barra" aria-label="Progresso de liberação">
 <div class="progresso"></div>
 </div>
 
-<p>Origem: São Paulo/SP</p>
-<p>Destino: Montenegro/RS</p>
+<div class="info">
+<b>Status Atual:</b> Aguardando Validação<br>
+<b>Etapa:</b> Validação<br>
+<b>Previsão de Saída:</b> 12/08/2026
 </div>
 
-<div class="rota">
-<span>São Paulo</span>
-<span>➡</span>
-<span>Minas Gerais</span>
-</div>
+</main>
 
-<div class="timeline">
+</body>
+</html>
 
-<div class="item">
-  <div class="ponto"></div>
